@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Saya | StayNest</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/app.js" defer></script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container navbar">
+            <a class="brand" href="index.html"><span>Stay</span>Nest</a>
+            <nav class="nav-links" aria-label="Navigasi utama">
+                <a href="index.html">Home</a>
+                <a href="penginapan.html">Penginapan</a>
+                <a href="login.html" data-login-link>Login</a>
+                <a class="active" href="profil.html" data-profile-link>Profil</a>
+                <a href="admin.html" data-admin-link class="hidden">Admin Panel</a>
+                <button class="secondary hidden" type="button" data-logout-button>Keluar</button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="section">
+        <div class="container">
+            <span class="eyebrow">Akun pengguna</span>
+            <h1 style="font-size: 38px;">Profil Saya</h1>
+            <div data-profile-content></div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">© StayNest</div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login dan Daftar | StayNest</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/app.js" defer></script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container navbar">
+            <a class="brand" href="index.html"><span>Stay</span>Nest</a>
+            <nav class="nav-links" aria-label="Navigasi utama">
+                <a href="index.html">Home</a>
+                <a href="penginapan.html">Penginapan</a>
+                <a class="active" href="login.html" data-login-link>Login</a>
+                <a href="profil.html" data-profile-link class="hidden">Profil</a>
+                <a href="admin.html" data-admin-link class="hidden">Admin Panel</a>
+                <button class="secondary hidden" type="button" data-logout-button>Keluar</button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="form-card panel">
+            <span class="eyebrow">Selamat datang kembali</span>
+            <h1 style="font-size: 34px;">Login StayNest</h1>
+            <p class="muted">Login diperlukan untuk membuka profil dan membuat booking.</p>
+            <div class="notice">
+                <strong>Akun admin demo</strong><br>
+                Email: admin@staynest.test<br>
+                Password: admin123
+            </div>
+            <form data-login-form>
+                <div class="field">
+                    <label for="email">Email</label>
+                    <input id="email" type="email" autocomplete="username" required placeholder="nama@email.com">
+                </div>
+                <div class="field">
+                    <label for="password">Password</label>
+                    <input id="password" type="password" autocomplete="current-password" required>
+                </div>
+                <div data-login-message class="notice hidden" role="status"></div>
+                <button type="submit" style="width: 100%;">Login</button>
+            </form>
+        </div>
+
+        <div class="form-card panel">
+            <h2 style="font-size: 26px;">Buat akun pengguna</h2>
+            <p class="muted">Akun disimpan di browser ini untuk demo tugas kuliah.</p>
+            <form data-register-form>
+                <div class="field">
+                    <label for="registerName">Nama lengkap</label>
+                    <input id="registerName" required>
+                </div>
+                <div class="field">
+                    <label for="registerEmail">Email</label>
+                    <input id="registerEmail" type="email" required>
+                </div>
+                <div class="field">
+                    <label for="registerPassword">Password (minimal 6 karakter)</label>
+                    <input id="registerPassword" type="password" minlength="6" required>
+                </div>
+                <div data-register-message class="notice hidden" role="status"></div>
+                <button class="secondary" type="submit">Daftar Akun</button>
+            </form>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">Demo akademik · Jangan gunakan password asli.</div>
+    </footer>
+</body>
+</html>

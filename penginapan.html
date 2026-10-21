@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peta dan Daftar Penginapan | StayNest</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/app.js" defer></script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container navbar">
+            <a class="brand" href="index.html"><span>Stay</span>Nest</a>
+            <nav class="nav-links" aria-label="Navigasi utama">
+                <a href="index.html">Home</a>
+                <a class="active" href="penginapan.html">Penginapan</a>
+                <a href="login.html" data-login-link>Login</a>
+                <a href="profil.html" data-profile-link class="hidden">Profil</a>
+                <a href="admin.html" data-admin-link class="hidden">Admin Panel</a>
+                <button class="secondary hidden" type="button" data-logout-button>Keluar</button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="section">
+        <div class="container">
+            <span class="eyebrow">Manado dan sekitarnya</span>
+            <h1 style="font-size: 38px;">Peta Penginapan</h1>
+            <p class="lead">Klik marker di peta untuk melihat detail penginapan. Data contoh bisa kamu tambah atau ubah melalui Admin Panel.</p>
+
+            <form class="filters panel" data-filter-form>
+                <div class="field">
+                    <label for="keyword">Nama / daerah</label>
+                    <input id="keyword" type="search" placeholder="Cari Manado, Tomohon...">
+                </div>
+                <div class="field">
+                    <label for="category">Kategori</label>
+                    <select id="category">
+                        <option value="">Semua</option>
+                        <option value="Hotel">Hotel</option>
+                        <option value="Villa">Villa</option>
+                        <option value="Homestay">Homestay</option>
+                    </select>
+                </div>
+                <div class="field">
+                    <label for="facility">Fasilitas</label>
+                    <select id="facility">
+                        <option value="">Semua fasilitas</option>
+                        <option>Wi-Fi</option>
+                        <option>AC</option>
+                        <option>Kolam Renang</option>
+                        <option>Restoran</option>
+                        <option>Parkir</option>
+                        <option>Dapur</option>
+                        <option>Pemandangan</option>
+                    </select>
+                </div>
+                <div class="field">
+                    <label for="maxPrice">Harga maksimum / malam (Rp)</label>
+                    <input id="maxPrice" type="number" min="0" placeholder="Contoh: 500000">
+                </div>
+                <div class="field" style="justify-content: end;">
+                    <button type="submit">Terapkan</button>
+                    <button class="secondary" type="button" data-reset-filter>Reset</button>
+                </div>
+            </form>
+
+            <p class="muted" data-map-count>Menyiapkan peta...</p>
+            <div class="map-wrap" id="peta">
+                <div id="map" role="application" aria-label="Peta Google Maps berisi marker penginapan"></div>
+                <div class="map-note">Marker H = Hotel, V = Villa, dan S = Homestay. Klik marker untuk melihat informasi dan membuka detail.</div>
+            </div>
+            <div data-map-message class="notice hidden" role="status"></div>
+
+            <div class="row-between" style="margin: 38px 0 18px;">
+                <div>
+                    <h2>Daftar penginapan</h2>
+                    <p class="muted" data-result-count></p>
+                </div>
+                <button class="secondary" type="button" data-my-location>📍 Lokasi Saya</button>
+            </div>
+            <div class="grid" data-stay-list></div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">© StayNest · Data penginapan dalam project ini merupakan data contoh.</div>
+    </footer>
+
+    <!-- Ganti YOUR_GOOGLE_MAPS_API_KEY dengan API key Google Maps milikmu. -->
+    <script>
+        window.initGoogleMap = function () {
+            if (typeof initGoogleMapInternal === "function") {
+                initGoogleMapInternal();
+            }
+        };
+    </script>
+    <script async src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY&callback=initGoogleMap&loading=async"></script>
+</body>
+</html>

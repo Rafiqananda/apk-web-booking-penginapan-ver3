@@ -1,0 +1,94 @@
+<html lang="id">
+    <head>
+        <meta charset="utf-8">
+        <meta content="width=device-width,initial-scale=1" name="viewport">
+        <title>
+            Booking - StayNest
+        </title>
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <a class="logo" href="index.html">
+                Stay<span>Nest</span>
+            </a>
+            <nav>
+                <a href="index.html">
+                    Home
+                </a>
+                <a class="active" href="penginapan.html">
+                    Penginapan
+                </a>
+            <a href="login.html">Login</a>
+            <a href="profil.html">Profil</a>
+            <a href="admin.html">Admin Panel</a>
+        </nav>
+        </header>
+        <main>
+            <section class="page">
+                <p class="eyebrow">
+                    LANGKAH TERAKHIR
+                </p>
+                <h1>
+                    Lengkapi data booking
+                </h1>
+            </section>
+            <section class="booking">
+                <form class="card" id="form">
+                    <h2>
+                        Data Pemesan
+                    </h2>
+                    <label>
+                        Nama Lengkap
+                        <input id="name" required>
+                    </label>
+                    <label>
+                        Nomor HP
+                        <input id="phone" required>
+                    </label>
+                    <h2>
+                        Data Menginap
+                    </h2>
+                    <label>
+                        Check-in
+                        <input id="in" required type="date">
+                    </label>
+                    <label>
+                        Check-out
+                        <input id="out" required type="date">
+                    </label>
+                    <label>
+                        Jumlah Tamu
+                        <input id="guests" min="1" required type="number" value="1">
+                    </label>
+                    <label>
+                        Jenis Kamar
+                        <select id="room">
+                        </select>
+                    </label>
+                    <div class="total">
+                        <span>
+                            Total
+                        </span>
+                        <b id="total">
+                            Rp0
+                        </b>
+                        <small id="nights">
+                            Pilih tanggal.
+                        </small>
+                    </div>
+                    <button class="btn full">
+                        Konfirmasi Booking
+                    </button>
+                </form>
+                <aside class="card" id="summary">
+                </aside>
+            </section>
+        </main>
+        <footer>
+            © StayNest 
+        </footer>
+        <script src="js/script.js">
+        </script>
+    </body>
+</html>

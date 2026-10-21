@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel | StayNest</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/app.js" defer></script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container navbar">
+            <a class="brand" href="index.html"><span>Stay</span>Nest</a>
+            <nav class="nav-links" aria-label="Navigasi utama">
+                <a href="index.html">Home</a>
+                <a href="penginapan.html">Penginapan</a>
+                <a href="login.html" data-login-link>Login</a>
+                <a href="profil.html" data-profile-link class="hidden">Profil</a>
+                <a class="active" href="admin.html" data-admin-link>Admin Panel</a>
+                <button class="secondary hidden" type="button" data-logout-button>Keluar</button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="section">
+        <div class="container">
+            <span class="eyebrow">Pengelolaan website</span>
+            <h1 style="font-size: 38px;">Admin Panel</h1>
+            <p class="lead">Kelola data penginapan, kategori, fasilitas, koordinat marker, dan status booking demo.</p>
+            <div data-admin-message class="notice hidden" role="status"></div>
+
+            <div class="stats">
+                <div class="stat">
+                    <span class="muted">Penginapan</span>
+                    <strong data-stay-total>0</strong>
+                </div>
+                <div class="stat">
+                    <span class="muted">Booking</span>
+                    <strong data-booking-total>0</strong>
+                </div>
+                <div class="stat">
+                    <span class="muted">Pengguna terdaftar</span>
+                    <strong data-user-total>0</strong>
+                </div>
+            </div>
+
+            <section class="panel" style="margin-bottom: 28px;">
+                <h2>Tambah Penginapan</h2>
+                <p class="muted">Isi koordinat latitude dan longitude supaya marker bisa muncul di Google Maps.</p>
+                <form data-admin-form>
+                    <div class="grid" style="grid-template-columns: repeat(2, minmax(0, 1fr));">
+                        <div class="field">
+                            <label for="stayName">Nama penginapan</label>
+                            <input id="stayName" required>
+                        </div>
+                        <div class="field">
+                            <label for="stayCategory">Kategori</label>
+                            <select id="stayCategory" required>
+                                <option value="Hotel">Hotel</option>
+                                <option value="Villa">Villa</option>
+                                <option value="Homestay">Homestay</option>
+                            </select>
+                        </div>
+                        <div class="field">
+                            <label for="stayPrice">Harga per malam (Rp)</label>
+                            <input id="stayPrice" type="number" min="1" required>
+                        </div>
+                        <div class="field">
+                            <label for="stayArea">Daerah / kecamatan</label>
+                            <input id="stayArea" required placeholder="Contoh: Wenang">
+                        </div>
+                        <div class="field">
+                            <label for="stayAddress">Alamat</label>
+                            <input id="stayAddress" required>
+                        </div>
+                        <div class="field">
+                            <label for="stayDescription">Deskripsi singkat</label>
+                            <input id="stayDescription" required>
+                        </div>
+                        <div class="field">
+                            <label for="stayLat">Latitude</label>
+                            <input id="stayLat" type="number" step="any" min="-90" max="90" required placeholder="Contoh: 1.4748">
+                        </div>
+                        <div class="field">
+                            <label for="stayLng">Longitude</label>
+                            <input id="stayLng" type="number" step="any" min="-180" max="180" required placeholder="Contoh: 124.8421">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label>Fasilitas</label>
+                        <div class="check-list" data-facility-options></div>
+                    </div>
+                    <button type="submit">Tambah ke Website dan Peta</button>
+                </form>
+            </section>
+
+            <section style="margin-bottom: 28px;">
+                <h2>Daftar Penginapan</h2>
+                <p class="muted">Menghapus data di sini juga menghapus marker terkait dari peta.</p>
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Nama</th>
+                                <th>Kategori</th>
+                                <th>Daerah</th>
+                                <th>Harga / malam</th>
+                                <th>Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody data-admin-stays></tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section>
+                <h2>Kelola Booking Demo</h2>
+                <p class="muted">Ubah status booking dari daftar berikut. Perubahan tersimpan di browser ini.</p>
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Penginapan</th>
+                                <th>Pemesan</th>
+                                <th>Tanggal</th>
+                                <th>Total</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody data-admin-bookings></tbody>
+                    </table>
+                </div>
+            </section>
+
+            <div class="notice" style="margin-top: 28px;">
+                <strong>Penting:</strong> Admin Panel ini adalah simulasi front-end. Data disimpan di localStorage browser, belum memakai database/server. Untuk aplikasi nyata, login, password, hak akses, dan data booking harus dipindahkan ke backend yang aman.
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">© StayNest · Admin demo</div>
+    </footer>
+</body>
+</html>
